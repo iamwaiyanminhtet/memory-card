@@ -2,9 +2,24 @@ import { useEffect, useState } from "react";
 import "../styles/cards.css";
 import Card from "./Card";
 
-const Cards = ({data, updateCurScore, determineScore, setResult}) => {
+const Cards = ({data, updateCurScore, determineScore, setResult, difficulty, resetScore}) => {
 
-  const copyData = data.map(card => ({ ...card }));
+  // const copyData = data.map(card => ({ ...card }));
+  let copyData = [];
+  for(let i = 0; i < difficulty; i++) {
+    copyData.push({...data[i]});
+  }
+
+  // generate cards based on difficulty
+  useEffect(() => {
+    let copyData = [];
+    for(let i = 0; i < difficulty; i++) {
+      copyData.push({...data[i]});
+    }
+    setCards([...copyData]);
+    resetScore();
+  }, [difficulty, data]);
+
   let [cards, setCards] = useState([...copyData]);
 
   // shuffle array
@@ -30,7 +45,8 @@ const Cards = ({data, updateCurScore, determineScore, setResult}) => {
     }
 
     if(cards.every(card => card.isClicked === true)) {
-      determineScore()
+      determineScore();
+      setCards([...copyData])
       setResult('won');
     }
     

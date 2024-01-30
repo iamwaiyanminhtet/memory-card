@@ -1,6 +1,6 @@
 import "../styles/header.css";
 
-const Header = ({logo}) => {
+const Header = ({logo, difficultyHandler}) => {
   return (
     <header>
         <nav>
@@ -8,9 +8,15 @@ const Header = ({logo}) => {
                 <li><img src={logo} alt="" width="70px"/></li>
                 <li>
                     <div>
-                        <button>Rules</button>
+                        <span className="options">Options : </span>
+                        {/* <button>Rules</button> */}
                         <select name="cardTheme" id="">
                             <option value="dc-lego">DC LEGO</option>
+                        </select>
+                        <select onChange={(e) => difficultyHandler(e.target.value)}>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
                         </select>
                     </div>
                 </li>

@@ -24,3 +24,18 @@ button:hover {
     background-color: var(--theme-color);
     color: var(--background-color);
 }
+
+.options {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+select {
+    padding: 0.5rem;
+    margin-inline: 0.3rem;
+    border: 3px solid var(--theme-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color--white);
+    font-weight: 700;
+}

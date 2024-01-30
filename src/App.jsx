@@ -11,6 +11,7 @@ function App() {
   const [cardTheme, setCardTheme] = useState(dcLego());
   const [score, setScore] = useState({cur : 0, best : 0});
   const [result, setResult] = useState('');
+  const [difficulty, setDifficulty] = useState(5);
 
   // update cur score
   function updateCurScore() {
@@ -20,19 +21,40 @@ function App() {
   // determineScore
   function determineScore() {
     if(score.cur > score.best) {
-      setScore(() => ({cur : 0, best : score.cur + 1}))
+      setScore((prev) => ({cur: 0, best: prev.cur}));
     }
   }
 
+  function resetScore() {
+    setScore((prev) => ({...prev, cur : 0}));
+  }
+
+  // close result dialog modal
   function closeModal() {
     setResult('');
   }
 
+  // choose difficulty
+  function difficultyHandler(value) {
+    if(value === "easy") {
+      setDifficulty(5)
+    }
+    if(value === "medium") {
+      setDifficulty(10)
+
+    }
+    if(value === "hard") {
+      setDifficulty(15)
+
+    }
+  }
+
   return (
    <>
-    <Header logo={cardTheme.logo}/>
+    <Header logo={cardTheme.logo} difficultyHandler={difficultyHandler}/>
     <ScoreBoard score={score}/>
-    <Cards data={cardTheme.data} updateCurScore={updateCurScore} determineScore={determineScore} setResult={setResult}/>
+    <Cards difficulty={difficulty} data={cardTheme.data} updateCurScore={updateCurScore}
+    resetScore={resetScore} determineScore={determineScore} setResult={setResult}  />
 
     {result === 'won' && (
       <WonDialog closeModal={closeModal} bestScore={score.best}/>
