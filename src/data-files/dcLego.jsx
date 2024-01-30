@@ -12,13 +12,47 @@ function dcLego() {
     let dcLegoHeroes = {
         logo,
         data : [
-            { id : uuidv4(), src :  batman},
-            { id : uuidv4(), src :  superman},
-            { id : uuidv4(), src :  flash},
-            { id : uuidv4(), src :  constantine},
-            { id : uuidv4(), src :  aquaman},
-            { id : uuidv4(), src :  wonderWoman},
-            { id : uuidv4(), src :  cyborg},
+            { 
+                id : uuidv4(), 
+                src :  batman,
+                isClicked : false
+            },
+            { 
+                id : uuidv4(), 
+                src :  superman,
+                isClicked : false
+
+            },
+            { 
+                id : uuidv4(), 
+                src :  flash,
+                isClicked : false
+            },
+            { 
+                id : uuidv4(), 
+                src :  constantine,
+                isClicked : false
+
+            },
+            { 
+                id : uuidv4(), 
+                src :  aquaman,
+                isClicked : false
+
+            },
+            { 
+                id : uuidv4(), 
+                src :  wonderWoman,
+                isClicked : false
+
+            },
+            { 
+                id : uuidv4(), 
+                src :  cyborg,
+                isClicked : false
+
+            },
+            
         ]
     }
 

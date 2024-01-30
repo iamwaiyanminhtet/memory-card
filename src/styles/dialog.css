@@ -1,0 +1,43 @@
+.dialog-container {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.dialog {
+    background-color: var(--theme-color);
+    color: var(--text-color-black);
+    display: block;
+    margin: auto;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+dialog p {
+    font-size: 1.2rem;
+
+}
+
+.dialog .dialog-btn {
+    color: white;
+    background-color: black;
+    border: none;
+    transition: 0.2s;
+    padding: 0.7rem;
+}
+
+.dialog .dialog-btn.try-again {
+    background-color: brown;
+}
+
+.dialog .dialog-btn:hover {
+    opacity: 0.7;
+}

@@ -6,11 +6,13 @@
 
 :root {
     --background-color : #202020;
-    --text-color : antiquewhite;
+    --text-color-white : antiquewhite;
+    --text-color-black : black;
     --theme-color :  #AFDEDC; /* #2E0F0A : choco , lake blue : 7392B7, soft green : AFDEDC*/
 }
 
 body {
     background-color: var(--background-color);
-    color: var(--text-color);
+    color: var(--text-color-white);
+    position: relative;
 }

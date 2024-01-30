@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import "../styles/cards.css";
 import Card from "./Card";
 
-const Cards = ({data}) => {
-  let [cards, setCards] = useState(data);
+const Cards = ({data, updateCurScore, determineScore, setResult}) => {
+
+  const copyData = data.map(card => ({ ...card }));
+  let [cards, setCards] = useState([...copyData]);
 
   // shuffle array
   const shuffle = (array) => { 
@@ -15,14 +17,29 @@ const Cards = ({data}) => {
   }; 
 
   // shuffle cards state change
-  function shuffleHandler() {
-    setCards(shuffle([...cards]))
-  }
+  function shuffleHandler(curCard) {
+    if(curCard.isClicked === true) {
+      determineScore()
+      setResult('lost')
+      setCards([...copyData])
+    }
+    if(curCard.isClicked === false) {
+      cards.forEach(card => card.id === curCard.id ? card.isClicked = true : null)
+      setCards(shuffle([...cards]));
+      updateCurScore();
+    }
+
+    if(cards.every(card => card.isClicked === true)) {
+      determineScore()
+      setResult('won');
+    }
+    
+  } 
 
   return (
     <div className="cards">
       {
-        cards.map( card => <Card src={card.src} shuffleHandler={shuffleHandler} key={card.id} />)
+        cards.map( card => <Card card={card} shuffleHandler={shuffleHandler} key={card.id} />)
       }
     </div>
   )
