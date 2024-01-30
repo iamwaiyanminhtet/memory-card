@@ -1,0 +1,14 @@
+create data array to dispaly randomly with obj [{name: "", src : ""},{},]
+create header with logo and some inputs and buttons
+create card component to display all card.
+create body component which accept an array with obj and shuffle the array and display all array items (cards)
+
+when clicking on each cards, the component should re-render and shuffle the array
+
+create currentScore state variable
+create bestScore state variable
+
+add input button to change the data array (UNO, lotr, hp, flag)
+based on the selected input data array, display the body components
+
+
