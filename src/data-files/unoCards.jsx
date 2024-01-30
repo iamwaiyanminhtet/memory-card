@@ -1,120 +1,105 @@
-import logo from "../assets/dc-lego/dc-logo.png";
-import batman from "../assets/dc-lego/batman.jpg";
-import constantine from "../assets/dc-lego/constantine.jpg";
-import flash from "../assets/dc-lego/flash.jpg";
-import cyborg from "../assets/dc-lego/cyborg.jpg";
-import superman from "../assets/dc-lego/superman.png";
-import aquaman from "../assets/dc-lego/aquaman.png";
-import wonderWoman from "../assets/dc-lego/wonder-woman.jpg";
-import beastBoy from "../assets/dc-lego/beast-boy.jpg";
-import greenLatern from "../assets/dc-lego/green-latern.jpg";
-import supergirl from "../assets/dc-lego/supergirl.jpg";
-import joker from "../assets/dc-lego/joker.jpg";
-import alfred from "../assets/dc-lego/alfred.png";
-import martianManhunter from "../assets/dc-lego/martian-manhunter.jpg";
-import dick from "../assets/dc-lego/dick.png";
-import kidFlash from "../assets/dc-lego/kid-flash.jpg";
-
 import { v4 as uuidv4 } from 'uuid';
 
-function dcLego() {
-    let dcLegoHeroes = {
+import logo from "../assets/uno/uno-logo.png"
+import r2 from "../assets/uno/red-2.jpg"
+import r4 from "../assets/uno/red-4.jpg"
+import r5 from "../assets/uno/red-5.jpg"
+import r9 from "../assets/uno/red-9.jpg"
+
+import g2 from "../assets/uno/green-2.jpg"
+import g4 from "../assets/uno/green-4.jpg"
+import g5 from "../assets/uno/green-5.jpg"
+import g9 from "../assets/uno/green-9.jpg"
+
+import b2 from "../assets/uno/blue-2.jpg"
+import b4 from "../assets/uno/blue-4.jpg"
+import b5 from "../assets/uno/blue-5.jpg"
+import b9 from "../assets/uno/blue-9.jpg"
+
+import y2 from "../assets/uno/yellow-2.jpg"
+import y5 from "../assets/uno/yellow-5.jpg"
+import y9 from "../assets/uno/yellow-9.jpg"
+
+export default function UNO() {
+    return {
         logo,
         data : [
             { 
                 id : uuidv4(), 
-                src :  batman,
+                src :  r5,
                 isClicked : false
             },
             { 
                 id : uuidv4(), 
-                src :  superman,
-                isClicked : false
-
-            },
-            { 
-                id : uuidv4(), 
-                src :  flash,
+                src :  b5,
                 isClicked : false
             },
             { 
                 id : uuidv4(), 
-                src :  constantine,
+                src :  g5,
                 isClicked : false
-
             },
             { 
                 id : uuidv4(), 
-                src :  aquaman,
+                src :  y5,
                 isClicked : false
-
             },
             { 
                 id : uuidv4(), 
-                src :  wonderWoman,
+                src :  r2,
                 isClicked : false
-
             },
             { 
                 id : uuidv4(), 
-                src :  cyborg,
+                src :  b2,
                 isClicked : false
-
             },
             { 
                 id : uuidv4(), 
-                src :  greenLatern,
+                src :  g2,
                 isClicked : false
-
             },
             { 
                 id : uuidv4(), 
-                src :  supergirl,
+                src :  y2,
                 isClicked : false
-
             },
             { 
                 id : uuidv4(), 
-                src :  joker,
+                src :  r9,
                 isClicked : false
-
             },
             { 
                 id : uuidv4(), 
-                src :  beastBoy,
+                src :  b9,
                 isClicked : false
-
             },
             { 
                 id : uuidv4(), 
-                src :  alfred,
+                src :  g9,
                 isClicked : false
-
             },
             { 
                 id : uuidv4(), 
-                src :  martianManhunter,
+                src :  r4,
                 isClicked : false
-
             },
             { 
                 id : uuidv4(), 
-                src :  dick,
+                src :  b4,
                 isClicked : false
-
             },
             { 
                 id : uuidv4(), 
-                src :  kidFlash,
+                src :  g4,
                 isClicked : false
-
             },
-
-            
+            { 
+                id : uuidv4(), 
+                src :  y9,
+                isClicked : false
+            },
         ]
     }
 
-    return dcLegoHeroes;
 }
-
-export default dcLego;

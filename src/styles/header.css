@@ -26,6 +26,11 @@ button:hover {
 }
 
 .options {
+    display: flex;
+    align-items: center;
+}
+
+.options-text {
     font-size: 1rem;
     font-weight: 700;
 }
@@ -38,4 +43,11 @@ select {
     background-color: var(--background-color);
     color: var(--text-color--white);
     font-weight: 700;
+}
+
+@media (max-width : 385px) {
+    .options {
+        flex-direction: column;
+        row-gap : 5px;
+    }
 }

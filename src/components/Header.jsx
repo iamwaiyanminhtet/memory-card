@@ -1,16 +1,17 @@
 import "../styles/header.css";
 
-const Header = ({logo, difficultyHandler}) => {
+const Header = ({logo, difficultyHandler, handleCardTheme}) => {
   return (
     <header>
         <nav>
             <ul>
                 <li><img src={logo} alt="" width="70px"/></li>
                 <li>
-                    <div>
-                        <span className="options">Options : </span>
+                    <div className="options">
+                        <span className="options-text">Options : </span>
                         {/* <button>Rules</button> */}
-                        <select name="cardTheme" id="">
+                        <select name="cardTheme" id="" onClick={(e) => handleCardTheme(e.target.value)}>
+                            <option value="uno">UNO</option>
                             <option value="dc-lego">DC LEGO</option>
                         </select>
                         <select onChange={(e) => difficultyHandler(e.target.value)}>
