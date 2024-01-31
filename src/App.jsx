@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Cards from './components/Cards';
 import dcLego from './data-files/dcLego';
 import UNO from './data-files/unoCards';
+import Coffee from './data-files/coffee';
 import ScoreBoard from './components/ScoreBoard';
 import { WonDialog, LostDialog } from './components/Dialog';
 
@@ -11,7 +12,8 @@ function App() {
 
   const lego = dcLego();
   const unoCards = UNO();
-
+  const coffee = Coffee();
+  
   const [cardTheme, setCardTheme] = useState(unoCards);
   const [score, setScore] = useState({cur : 0, best : 0});
   const [result, setResult] = useState('');
@@ -20,13 +22,15 @@ function App() {
   // handle card theme
   function handleCardTheme(value) {
     if(value === 'uno') {
-      console.log(value)
       setCardTheme(unoCards);
     }
     if(value === 'dc-lego') {
-      console.log(value)
       setCardTheme(lego);
     }
+    if (value === 'coffee') {
+      setCardTheme(coffee);
+    }
+   
   }
 
   // update cur score
@@ -73,8 +77,13 @@ function App() {
    <>
     <Header logo={cardTheme.logo} difficultyHandler={difficultyHandler} handleCardTheme={handleCardTheme}/>
     <ScoreBoard score={score}/>
-    <Cards difficulty={difficulty} data={cardTheme.data} updateCurScore={updateCurScore}
-    resetScore={resetScore} determineScore={determineScore} setResult={setResult}  />
+    <Cards 
+    difficulty={difficulty} 
+    data={cardTheme.data} 
+    updateCurScore={updateCurScore}
+    resetScore={resetScore} 
+    determineScore={determineScore} 
+    setResult={setResult} />
 
     {result === 'won' && (
       <WonDialog closeModal={closeModal} bestScore={score.best}/>
