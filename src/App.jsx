@@ -38,7 +38,11 @@ function App() {
   function determineScore() {
     if(score.cur > score.best) {
       setScore((prev) => ({cur: 0, best: prev.cur}));
+      return;
     }
+
+    setScore((prev) => ({...prev, cur : 0}));
+
   }
 
   function resetScore() {
